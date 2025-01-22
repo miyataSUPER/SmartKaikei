@@ -1,4 +1,4 @@
-# AI-OCR 確定申告用経費データベース
+# SmartKaikei - AI搭載の確定申告支援システム
 
 ## 概要
 領収書をアップロードするだけで、OCRとAIで自動的に経費データを作成・管理できるアプリケーションです。
@@ -20,16 +20,16 @@
 ## クイックスタート
 ```bash
 # リポジトリのクローン
-git clone https://github.com/yourusername/AI-OCR.git
-cd AI-OCR
+git clone https://github.com/miyata-ai/SmartKaikei.git
+cd SmartKaikei
 
 # 環境変数の設定
 cp .env.sample .env
 # .envファイルを編集してGemini APIキーを設定
 
 # Dockerイメージのビルドと起動
-docker build -t ai-ocr .
-docker run -p 8501:8501 -v $(pwd)/data:/app/data ai-ocr
+docker build -t smart-kaikei .
+docker run -p 8501:8501 -v $(pwd)/data:/app/data smart-kaikei
 
 # ブラウザでアクセス
 open http://localhost:8501
@@ -63,10 +63,10 @@ open http://localhost:8501
 ### コンテナ内でのテスト実行
 ```bash
 # コンテナ内でテストを実行
-docker exec -it ai-ocr pytest tests/ -v
+docker exec -it smart-kaikei pytest tests/ -v
 
 # カバレッジレポートの生成
-docker exec -it ai-ocr pytest --cov=database --cov=ocr --cov=utils tests/ -v
+docker exec -it smart-kaikei pytest --cov=database --cov=ocr --cov=utils tests/ -v
 ```
 
 現在のテストカバレッジ:
@@ -77,7 +77,7 @@ docker exec -it ai-ocr pytest --cov=database --cov=ocr --cov=utils tests/ -v
 
 ### ディレクトリ構造
 ```
-AI-OCR/
+SmartKaikei/
 ├── app/              # Streamlitアプリケーション
 ├── database/         # データベースモデルと操作
 ├── ocr/             # OCR・AI処理エンジン
@@ -121,6 +121,12 @@ MIT License
 ## 作者
 Hiroshi Miyata  
 Mail: miyata.aistart@gmail.com
+
+## 貢献
+1. このリポジトリをフォーク
+2. 新しいブランチを作成
+3. 変更をコミット
+4. プルリクエストを作成
 
 
 
